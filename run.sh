@@ -53,15 +53,15 @@ set_owner() {
 	echo "正在设置设备管理员…"
 	dpm_result=$(${adb_cmd} shell dpm set-device-owner ${admin_component} 2>&1)
 
-    lower_case_result=$(echo ${dpm_result} | tr [A-Z] [a-z])
+	lower_case_result=$(echo ${dpm_result} | tr [A-Z] [a-z])
 	if [[ "$lower_case_result" == *"success"* ]]; then
 		echo "设置成功"
-        echo
-        echo "无论手机重启或升级，持续有效"
+		echo
+		echo "无论手机重启或升级，持续有效"
 		echo "如需卸载${app_name}，请务必先全部解冻，再在其设置中选择卸载"
 		echo "其他问题请参考文档："
 		echo "http://t.cn/E5QwyJN"
-        echo
+		echo
 		exit
 	elif [[ "$lower_case_result" == *"accounts on the device"* ]]; then
 		echo
@@ -95,13 +95,13 @@ set_owner() {
 		echo "请移除其他管理员，并按回车以重试"
 		read
 		set_owner
-    else
-        echo
-        echo "设置失败，未知错误"
-        echo
-        echo "错误详情："
-        echo
-        echo ${dpm_result}
+	else
+		echo
+		echo "设置失败，未知错误"
+		echo
+		echo "错误详情："
+		echo
+		echo ${dpm_result}
 	fi
 }
 
