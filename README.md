@@ -15,9 +15,9 @@ Mac 打开「终端.app」（如果您找不到可以在 Spotlight 搜索中输�
 Linux 用户直接执行下列命令：
 
 ```
- git clone https://github.com/heruoxin/ice-box-setup-command;
- cd ice-box-setup-command;
- bash ./run.sh;
+ git clone https://github.com/heruoxin/ice-box-setup-command --depth 1
+ cd ice-box-setup-command
+ bash ./run.sh
 ```
 
 然后根据提示操作即可.
